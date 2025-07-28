@@ -13,16 +13,16 @@
 <meta property="og:site_name" content="valiumaggelein">
 <meta property="og:description" content="Game TesterJust as a heads up, I’m going to be using the local instance to demonstrate the solve because at the time of publishing this writeup, the remote instance is no longer active. Additionally,">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/public/images/deadsec1.png">
-<meta property="og:image" content="http://example.com/public/images/image-1.png">
-<meta property="og:image" content="http://example.com/public/images/image2.png">
-<meta property="og:image" content="http://example.com/public/images/image3.png">
-<meta property="og:image" content="http://example.com/public/images/4.png">
+<meta property="og:image" content="http://example.com/images/image.png">
+<meta property="og:image" content="http://example.com/images/image-1.png">
+<meta property="og:image" content="http://example.com/images/image-2.png">
+<meta property="og:image" content="http://example.com/images/image-3.png">
+<meta property="og:image" content="http://example.com/images/image-4.png">
 <meta property="article:published_time" content="2025-07-27T04:55:44.000Z">
-<meta property="article:modified_time" content="2025-07-28T06:43:41.877Z">
+<meta property="article:modified_time" content="2025-07-28T06:50:31.994Z">
 <meta property="article:author" content="valiumaggelein">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/public/images/deadsec1.png">
+<meta name="twitter:image" content="http://example.com/images/image.png">
     
     
       
@@ -168,11 +168,11 @@
 <br>
 
 <p>Upon visiting the website, we get greeted by a “Memory Card Game” page, which after looking at the source code for the site, works entirely on the front end and nothing happens when you complete the game, so I decided to scrap this.</p>
-<p><img src="/../../public/images/deadsec1.png"></p>
+<p><img src="/../images/image.png" alt="alt text"></p>
 <br>
 
 <p>Upon looking at the source code, I saw that there was an <code>/admin</code> endpoint, and upon trying to visit it, I get a <code>401 Unauthorized</code> message.</p>
-<p><img src="/../../public/images/image-1.png" alt="alt text"></p>
+<p><img src="/../images/image-1.png" alt="alt text"></p>
 <br>
 
 <p>After getting this message, I decided to look at the code dealing with the logic regarding authorization to the <code>/admin</code> endpoint. It was located in the <code>middleware.ts</code> file, and I felt like I had reached a deadlock. No matter how many times I prompted GPT for help and tried different strategies, I could not figure out a way to gain access to the endpoint.</p>
@@ -182,7 +182,7 @@
 <br>
 
 <p>After an hour or two of trying to figure this out, one of my friends simply suggested I run the Snyk vulnerability scanner on the npm packages, so I did. Lo and behold, there is a CVE associated with bypassing NextJS middleware: <a target="_blank" rel="noopener" href="https://projectdiscovery.io/blog/nextjs-middleware-authorization-bypass">CVE-2025-29927: Next.js Middleware Authorization Bypass</a>.</p>
-<p><img src="/../../public/images/image2.png" alt="alt text"></p>
+<p><img src="/../images/image-2.png" alt="alt text"></p>
 <p>For those unaware, middleware is a security mechanism implemented on websites that basically function as a middleman for requests made to certain endpoints. When making requests to <code>/admin</code> for example, the middleware “intercepts” the request, makes the necessary checks in the HTTP headers for the appropriate session token &amp; any other required security checks before forwarding the request to the endpoint if everything checks out.</p>
 <br>
 
@@ -201,14 +201,14 @@
 <br>
 
 <p>After sending this <code>GET</code> request, we successfully gain access to the <code>/admin</code> endpoint. We’re greeted with a page that allows us to write JavaScript code that we can either execute server-side or client-side.</p>
-<p><img src="/../../public/images/image3.png" alt="alt text"></p>
+<p><img src="/../images/image-3.png" alt="alt text"></p>
 <br>
 
 <p>I didn’t bother messing with the <strong>Client Run</strong> functionality because running client-side JS code is worthless in any context where we would have access to run server-side code.</p>
 <br>
 
 <p>Anyways, I try running server-side JavaScript code and look at what I get as a response in Burpsuite, and I see this.</p>
-<p><img src="/../../public/images/4.png" alt="alt text"></p>
+<p><img src="/../images/image-4.png" alt="alt text"></p>
 
   </div>
 </article>
