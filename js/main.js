@@ -53,7 +53,7 @@ $(document).ready(function() {
     /**
      * Add a scroll listener to the menu to hide/show the navigation links.
      */
-    if (menu.length) {
+    /**if (menu.length) {
       $(window).on("scroll", function() {
         var topDistance = menu.offset().top;
 
@@ -75,6 +75,33 @@ $(document).ready(function() {
         }
       });
     }
+    **/
+  if (menu.length) {
+    let lastScrollTop = 0;
+
+    $(window).on("scroll", function() {
+      const currentScroll = $(this).scrollTop();
+
+      // Show nav when scrolling up, hide when scrolling down past threshold
+      if (currentScroll > lastScrollTop && currentScroll > 100) {
+        nav.fadeOut(); // Hide nav
+      } else if (currentScroll < lastScrollTop) {
+        nav.fadeIn(); // Show nav
+      }
+
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+
+      // Tablet behavior: toggle menu icon and "scroll to top" icon
+      if (!$("#menu-icon").is(":visible") && currentScroll < 50) {
+        $("#menu-icon-tablet").show();
+        $("#top-icon-tablet").hide();
+      } else if (!$("#menu-icon").is(":visible") && currentScroll > 100) {
+        $("#menu-icon-tablet").hide();
+        $("#top-icon-tablet").show();
+      }
+    });
+  }
+
 
     /**
      * Show mobile navigation menu after scrolling upwards,
