@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Source code was provided for this challenge  Upon visiting the website, I’m greeted by a store page, with a list of pearl products each with a button labeled “Add to Cart”. After clicking around &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pearl - ImaginaryCTF 2025">
+<meta property="og:url" content="http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/index.html">
+<meta property="og:site_name" content="valiumaggelein">
+<meta property="og:description" content="Source code was provided for this challenge  Upon visiting the website, I’m greeted by a store page, with a list of pearl products each with a button labeled “Add to Cart”. After clicking around &amp;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/pearl/image.png">
+<meta property="og:image" content="http://example.com/images/pearl/image-1.png">
+<meta property="og:image" content="http://example.com/images/pearl/image-2.png">
+<meta property="og:image" content="http://example.com/images/pearl/image-3.png">
+<meta property="og:image" content="http://example.com/images/pearl/image-4.png">
+<meta property="og:image" content="http://example.com/images/pearl/image-5.png">
+<meta property="article:published_time" content="2025-09-09T19:18:02.000Z">
+<meta property="article:modified_time" content="2025-09-09T19:45:28.174Z">
+<meta property="article:author" content="valiumaggelein">
+<meta property="article:tag" content="Web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/pearl/image.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Pearl - ImaginaryCTF 2025</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+    <!-- mathjax -->
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Archive</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tags</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/07/30/Cat/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&text=Pearl - ImaginaryCTF 2025"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&title=Pearl - ImaginaryCTF 2025"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&is_video=false&description=Pearl - ImaginaryCTF 2025"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Pearl - ImaginaryCTF 2025&body=Check out this article: http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&title=Pearl - ImaginaryCTF 2025"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&title=Pearl - ImaginaryCTF 2025"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&title=Pearl - ImaginaryCTF 2025"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&title=Pearl - ImaginaryCTF 2025"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&name=Pearl - ImaginaryCTF 2025&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&t=Pearl - ImaginaryCTF 2025"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Pearl - ImaginaryCTF 2025
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">valiumaggelein</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-09-09T19:18:02.000Z" class="dt-published" itemprop="datePublished">2025-09-09</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Web/" rel="tag">Web</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+  <!-- Display the description -->
+  
+
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p><em><strong>Source code was provided for this challenge</strong></em><br><br><br><br></p>
+<p><img src="/../images/pearl/image.png" alt="alt text"></p>
+<p>Upon visiting the website, I’m greeted by a store page, with a list of pearl products each with a button labeled “Add to Cart”. After clicking around &amp; fuzzing the website, I found that this webpage is completely static and there is no backend logic to this initial page. I then decided to look at the source code for the site, and I found that there is some interesting logic regarding viewing files.</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">my</span> <span class="variable">$webroot</span> = <span class="string">&quot;./files&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">my</span> <span class="variable">$d</span> = HTTP::Daemon-&gt;new(<span class="string">LocalAddr =&gt;</span> <span class="string">&#x27;0.0.0.0&#x27;</span>, <span class="string">LocalPort =&gt;</span> <span class="number">8080</span>, <span class="string">Reuse =&gt;</span> <span class="number">1</span>) || <span class="keyword">die</span> <span class="string">&quot;Failed to start server: <span class="variable">$!</span>&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">&quot;Server running at: &quot;</span>, <span class="variable">$d</span>-&gt;url, <span class="string">&quot;\n&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (<span class="keyword">my</span> <span class="variable">$c</span> = <span class="variable">$d</span>-&gt;<span class="keyword">accept</span>) &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">my</span> <span class="variable">$r</span> = <span class="variable">$c</span>-&gt;get_request) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$r</span>-&gt;<span class="function"><span class="keyword">method</span> <span class="title">eq</span> &#x27;<span class="title">GET</span>&#x27;) </span>&#123;</span><br><span class="line">            <span class="keyword">my</span> <span class="variable">$path</span> = CGI::unescape(<span class="variable">$r</span>-&gt;uri-&gt;path);</span><br><span class="line">            <span class="variable">$path</span> =~ s|^<span class="regexp">/||;     # Remove leading slash</span></span><br><span class="line"><span class="regexp">            $path ||= &#x27;index.html&#x27;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            my $fullpath = File::Spec-&gt;catfile($webroot, $path);</span></span><br><span class="line"><span class="regexp">            # $webroot = ./</span>files</span><br><span class="line">            </span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$fullpath</span> =~ <span class="regexp">/\.\.|[,\`\)\(;&amp;]|\|.*\|/</span>) &#123;</span><br><span class="line">                <span class="variable">$c</span>-&gt;send_error(RC_BAD_REQUEST, <span class="string">&quot;Invalid path&quot;</span>);</span><br><span class="line">                <span class="keyword">next</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (-d <span class="variable">$fullpath</span>) &#123;</span><br><span class="line">                <span class="comment"># Serve directory listing</span></span><br><span class="line">                <span class="keyword">opendir</span>(<span class="keyword">my</span> <span class="variable">$dh</span>, <span class="variable">$fullpath</span>) <span class="keyword">or</span> <span class="keyword">do</span> &#123;</span><br><span class="line">                    <span class="variable">$c</span>-&gt;send_error(RC_FORBIDDEN, <span class="string">&quot;Cannot open directory.&quot;</span>);</span><br><span class="line">                    <span class="keyword">next</span>;</span><br><span class="line">                &#125;;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">my</span> <span class="variable">@files</span> = <span class="keyword">readdir</span>(<span class="variable">$dh</span>);</span><br><span class="line">                <span class="keyword">closedir</span>(<span class="variable">$dh</span>);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">my</span> <span class="variable">$html</span> = <span class="string">&quot;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Index of /<span class="variable">$path</span>&lt;/h1&gt;&lt;ul&gt;&quot;</span>;</span><br><span class="line">                <span class="keyword">foreach</span> <span class="keyword">my</span> <span class="variable">$f</span> (<span class="variable">@files</span>) &#123;</span><br><span class="line">                    <span class="keyword">next</span> <span class="keyword">if</span> <span class="variable">$f</span> =~ <span class="regexp">/^\./</span>;  <span class="comment"># Skip dotfiles</span></span><br><span class="line">                    <span class="keyword">my</span> <span class="variable">$link</span> = <span class="string">&quot;<span class="variable">$path</span>/<span class="variable">$f</span>&quot;</span>;</span><br><span class="line">                    <span class="variable">$link</span> =~ s|<span class="regexp">//</span>|<span class="regexp">/|g;</span></span><br><span class="line"><span class="regexp">                    $html .= qq&#123;&lt;li&gt;&lt;a href=&quot;/</span><span class="variable">$link</span><span class="string">&quot;&gt;&#125; . escapeHTML(<span class="variable">$f</span>) . &quot;</span>&lt;<span class="regexp">/a&gt;&lt;/li</span>&gt;<span class="string">&quot;;</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">                <span class="variable">$html</span> .= &quot;</span>&lt;<span class="regexp">/ul&gt;&lt;/</span>body&gt;&lt;<span class="regexp">/html&gt;&quot;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">                my $resp = HTTP::Response-&gt;new(RC_OK);</span></span><br><span class="line"><span class="regexp">                $resp-&gt;header(&quot;Content-Type&quot; =&gt; &quot;text/</span>html<span class="string">&quot;);</span></span><br><span class="line"><span class="string">                <span class="variable">$resp</span>-&gt;content(<span class="variable">$html</span>);</span></span><br><span class="line"><span class="string">                <span class="variable">$c</span>-&gt;send_response(<span class="variable">$resp</span>);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &#125; else &#123;</span></span><br><span class="line"><span class="string">                open(my <span class="variable">$fh</span>, <span class="variable">$fullpath</span>) or do &#123;</span></span><br><span class="line"><span class="string">                    <span class="variable">$c</span>-&gt;send_error(RC_INTERNAL_SERVER_ERROR, &quot;</span>Could <span class="keyword">not</span> <span class="keyword">open</span> file.<span class="string">&quot;);</span></span><br><span class="line"><span class="string">                    next;</span></span><br><span class="line"><span class="string">                &#125;;</span></span><br><span class="line"><span class="string">                binmode <span class="variable">$fh</span>;</span></span><br><span class="line"><span class="string">                my <span class="variable">$content</span> = do &#123; local <span class="variable">$/</span>; &lt;<span class="variable">$fh</span>&gt; &#125;;</span></span><br><span class="line"><span class="string">                close <span class="variable">$fh</span>;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                my <span class="variable">$mime</span> = &#x27;text/html&#x27;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                my <span class="variable">$resp</span> = HTTP::Response-&gt;new(RC_OK);</span></span><br><span class="line"><span class="string">                <span class="variable">$resp</span>-&gt;header(&quot;</span>Content-Type<span class="string">&quot; =&gt; <span class="variable">$mime</span>);</span></span><br><span class="line"><span class="string">                <span class="variable">$resp</span>-&gt;content(<span class="variable">$content</span>);</span></span><br><span class="line"><span class="string">                <span class="variable">$c</span>-&gt;send_response(<span class="variable">$resp</span>);</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125; else &#123;</span></span><br><span class="line"><span class="string">            <span class="variable">$c</span>-&gt;send_error(RC_METHOD_NOT_ALLOWED);</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    <span class="variable">$c</span>-&gt;close;</span></span><br><span class="line"><span class="string">    undef(<span class="variable">$c</span>);</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<br>
+<br>
+
+<p>Upon closer inspection of the code, I found that there is a regex check that filters out any requests that contain the following patterns:</p>
+<ul>
+<li><code>..</code> (two consecutive periods)</li>
+<li>Any one character from the following set: <code>, ( ) &amp; ; </code></li>
+<li>A sequence that starts with or ends with a pipe (<code>|</code>)</li>
+</ul>
+<p>My initial assumption when I first looked at the application logic is some sort of LFI (Local File Inclusion) vulnerability, but after looking at the code more carefully, I realized that this was not the case. The regex filter makes LFI impossible.</p>
+<p>For multiple hours, I tried bypassing the regex filter, but at this point I was tunnel-visioned into trying some sort of LFI, but nothing would work. I noticed the code logic allowed you to list files in whatever directory you specified, but I was stuck in the current directory, as there was no way to backwards traverse the directory.</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (-d <span class="variable">$fullpath</span>) &#123;</span><br><span class="line">    <span class="comment"># Serve directory listing</span></span><br><span class="line">    <span class="keyword">opendir</span>(<span class="keyword">my</span> <span class="variable">$dh</span>, <span class="variable">$fullpath</span>) <span class="keyword">or</span> <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="variable">$c</span>-&gt;send_error(RC_FORBIDDEN, <span class="string">&quot;Cannot open directory.&quot;</span>);</span><br><span class="line">        <span class="keyword">next</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">my</span> <span class="variable">@files</span> = <span class="keyword">readdir</span>(<span class="variable">$dh</span>);</span><br><span class="line">    <span class="keyword">closedir</span>(<span class="variable">$dh</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">my</span> <span class="variable">$html</span> = <span class="string">&quot;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Index of /<span class="variable">$path</span>&lt;/h1&gt;&lt;ul&gt;&quot;</span>;</span><br><span class="line">    <span class="keyword">foreach</span> <span class="keyword">my</span> <span class="variable">$f</span> (<span class="variable">@files</span>) &#123;</span><br><span class="line">        <span class="keyword">next</span> <span class="keyword">if</span> <span class="variable">$f</span> =~ <span class="regexp">/^\./</span>;  <span class="comment"># Skip dotfiles</span></span><br><span class="line">        <span class="keyword">my</span> <span class="variable">$link</span> = <span class="string">&quot;<span class="variable">$path</span>/<span class="variable">$f</span>&quot;</span>;</span><br><span class="line">        <span class="variable">$link</span> =~ s|<span class="regexp">//</span>|<span class="regexp">/|g;</span></span><br><span class="line"><span class="regexp">        $html .= qq&#123;&lt;li&gt;&lt;a href=&quot;/</span><span class="variable">$link</span><span class="string">&quot;&gt;&#125; . escapeHTML(<span class="variable">$f</span>) . &quot;</span>&lt;<span class="regexp">/a&gt;&lt;/li</span>&gt;<span class="string">&quot;;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    <span class="variable">$html</span> .= &quot;</span>&lt;<span class="regexp">/ul&gt;&lt;/</span>body&gt;&lt;<span class="regexp">/html&gt;&quot;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    my $resp = HTTP::Response-&gt;new(RC_OK);</span></span><br><span class="line"><span class="regexp">    $resp-&gt;header(&quot;Content-Type&quot; =&gt; &quot;text/</span>html<span class="string">&quot;);</span></span><br><span class="line"><span class="string">    <span class="variable">$resp</span>-&gt;content(<span class="variable">$html</span>);</span></span><br><span class="line"><span class="string">    <span class="variable">$c</span>-&gt;send_response(<span class="variable">$resp</span>);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>In the above code is where the directory listing logic resides. Whatever path you specify in your <code>GET</code> request is appended to the <code>./files</code> directory, and then the directory listing is served. For example, if you make a <code>GET</code> request to <code>/files/..</code>, the server will try to list the contents of the <code>./files/..</code> directory, which is the parent directory of the <code>./files</code> directory. This is where the regex filter comes into play, as it filters out any requests that contain the <code>..</code> pattern. With this information, I was able to just list the contents of the <code>./files</code> directory, which just contained the <code>index.html</code> file.</p>
+<p><img src="/../images/pearl/image-1.png" alt="alt text"></p>
+<br>
+
+<p>After being lost on this for a while, I decided to paste the source code into an LLM &amp; ask it if there were any vulnerable functions in this code, and it outlined that the <code>open()</code> function in perl has a built-in functionality (funnily enough, not a vulnerability) that allows you to just straight up run shell commands.</p>
+<p><img src="/../images/pearl/image-2.png" alt="alt text"></p>
+<br>
+
+<p>After finding this out, I decided to test it out &amp; see if I am able to get command execution.<br><img src="/../images/pearl/image-3.png" alt="alt text"></p>
+<p>As you can see, this did not work. After further investigation as to why this wasn’t working, I was playing around with the code &amp; seeing what is the exact string that is being passed into the <code>open()</code> function, and it looked like this.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;./files/ls|&quot;</span><br></pre></td></tr></table></figure>
+
+<p>The <code>./files</code> string is there because it is prepended in the line that states <code>$fullpath = File::Spec-&gt;catfile($webroot, $path);</code>, and the <code>ls</code> string with the pipe operator appended is there because it is what allows the <code>open()</code> function to execute shell commands.</p>
+<p>Knowing this, I needed to find a way to have my command with the pipe operator appended on its own separate line, separate from <code>./files</code>. It occurred to me to try appending a newline character (<code>\n</code>), and when I tested printing the <code>$fullpath</code> that is printed, I got this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;./files/&quot;</span><br><span class="line">&quot;ls|&quot;</span><br></pre></td></tr></table></figure>
+<br>
+
+<p>Now that the command &amp; the pipe operator are on their own separate lines, I decided to try if this would work, and I was able to get command execution.<br><img src="/../images/pearl/image-4.png" alt="alt text"></p>
+<br>
+
+<p>Before going &amp; looking for the flag, I want to quickly explain why the first payload didn’t work.</p>
+<p>Essentially, when you append the pipe (<code>|</code>) operator at the end of the string in the 2nd argument of perl’s <code>open()</code> function, it will treat anything before it as a command. Knowing this now, it was seen that the first payload I tried was <code>./files/ls|</code>, which failed because that isn’t a valid command.</p>
+<p>However, when you append the newline character at the beginning, it separates <code>./files</code> and <code>ls|</code> into two separate strings. In this case, perl would treat the first string as a directory, and the second string as a shell command, which is what I wanted.</p>
+<br>
+
+<p>After listing out the contents of the root <code>/</code> directory, I found the flag there &amp; catted it out successfully, completing the challenge.<br><img src="/../images/pearl/image-5.png" alt="alt text"></p>
+
+  </div>
+</article>
+
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/archives/">Archive</a></li>
+        
+          <li><a href="/categories/">Categories</a></li>
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&text=Pearl - ImaginaryCTF 2025"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&title=Pearl - ImaginaryCTF 2025"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&is_video=false&description=Pearl - ImaginaryCTF 2025"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Pearl - ImaginaryCTF 2025&body=Check out this article: http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&title=Pearl - ImaginaryCTF 2025"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&title=Pearl - ImaginaryCTF 2025"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&title=Pearl - ImaginaryCTF 2025"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&title=Pearl - ImaginaryCTF 2025"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&name=Pearl - ImaginaryCTF 2025&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2025/09/09/Pearl-ImaginaryCTF-2025/&t=Pearl - ImaginaryCTF 2025"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2024-2025
+    valiumaggelein
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Archive</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tags</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+
+    <script src="/js/oneko.js"></script>
+    <script>
+      window.onload = function() {
+        oneko('/images/oneko.gif');
+      };
+    </script>
+</body>
+</html>
